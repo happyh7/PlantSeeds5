@@ -10,8 +10,8 @@ data class Seed(
     val id: Long = 0,
     val name: String,
     val description: String,
-    val sowingTime: Date,
-    val harvestTime: Date,
+    val sowingTime: Int,
+    val harvestTime: Int,
     val createdAt: Date = Date(),
     val variety: String? = null,
     val difficultyLevel: Int = 1
