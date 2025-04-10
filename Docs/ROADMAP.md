@@ -1,0 +1,157 @@
+# PlantSeeds Roadmap
+
+## Fas 1: Grundläggande Setup (0-2 veckor)
+- [ ] Skapa grundläggande projektstruktur
+  - [ ] Konfigurera Android Studio
+  - [ ] Sätt upp Git-repository
+  - [ ] Skapa grundläggande moduler
+  - [ ] Konfigurera Gradle
+- [ ] Databasimplementering
+  - [ ] Sätt upp Room-databas
+  - [ ] Implementera alla entiteter
+  - [ ] Skapa DAO:er
+  - [ ] Implementera TypeConverters
+  - [ ] Skapa migrations
+  - [ ] Implementera automatisk backup
+  - [ ] Skapa återställningsfunktioner
+  - [ ] Implementera datavalidering
+- [ ] Firebase Integration
+  - [ ] Sätt upp Firebase-projekt
+  - [ ] Konfigurera Authentication
+  - [ ] Sätt upp Firestore
+  - [ ] Konfigurera Storage
+  - [ ] Implementera Analytics
+
+## Fas 2: Kärnfunktionalitet (2-4 veckor)
+- [ ] Användarhantering
+  - [ ] Implementera inloggning/registrering
+  - [ ] Skapa användarprofil
+  - [ ] Implementera användarinställningar
+  - [ ] Implementera offline-läge
+  - [ ] Implementera säker datalagring
+  - [ ] Skapa krypteringsfunktioner
+  - [ ] Implementera säker autentisering
+- [ ] Fröhantering
+  - [ ] Skapa frödatabas
+  - [ ] Implementera sökfunktion
+  - [ ] Skapa fröinformation
+  - [ ] Implementera frömetadata
+  - [ ] Implementera offline-cache för frödata
+- [ ] Växthantering
+  - [ ] Skapa växtdatabas
+  - [ ] Implementera växtskötsel
+  - [ ] Skapa växtloggar
+  - [ ] Implementera bildhantering
+
+## Fas 3: Användargränssnitt (4-6 veckor)
+- [ ] Huvudnavigering
+  - [ ] Implementera bottom navigation
+  - [ ] Skapa huvudskärmar
+  - [ ] Implementera navigeringsflöde
+  - [ ] Sätt upp A/B-testning för UI-komponenter
+  - [ ] Implementera tillgänglighetsfunktioner
+  - [ ] Implementera responsiv design
+- [ ] Fröskärmar
+  - [ ] Skapa frölista
+  - [ ] Implementera fröinformation
+  - [ ] Skapa frösök
+  - [ ] Implementera fröfiltrering
+  - [ ] Konfigurera A/B-testning för fröpresentation
+  - [ ] Implementera tillgänglighetsfunktioner
+  - [ ] Implementera responsiv layout
+- [ ] Växtskärmar
+  - [ ] Skapa växtlista
+  - [ ] Implementera växtinformation
+  - [ ] Skapa växtlogg
+  - [ ] Implementera växtbilder
+  - [ ] Implementera tillgänglighetsfunktioner
+  - [ ] Implementera responsiv layout
+- [ ] Skärmanpassning
+  - [ ] Implementera fold/unfold detection
+  - [ ] Skapa adaptiva layouts
+  - [ ] Implementera surfplattespecifika vyer
+  - [ ] Optimera för olika skärmstorlekar
+
+## Fas 4: Funktioner (6-8 veckor)
+- [ ] Påminnelser
+  - [ ] Implementera vattningspåminnelser
+  - [ ] Skapa gödslingspåminnelser
+  - [ ] Implementera skördepåminnelser
+  - [ ] Implementera lokala påminnelser som fungerar offline
+- [ ] Väderintegration
+  - [ ] Implementera väderdata
+  - [ ] Skapa väderaviseringar
+  - [ ] Implementera väderbaserade rekommendationer
+  - [ ] Implementera offline-cache för väderdata
+- [ ] Skördehantering
+  - [ ] Skapa skördelogg
+  - [ ] Implementera skördestatistik
+  - [ ] Skapa skördeplanering
+- [ ] Sociala funktioner
+  - [ ] Implementera delning av trädgårdsdata
+  - [ ] Skapa betygssystem för frön och växter
+  - [ ] Implementera synkronisering av populära växter
+  - [ ] Skapa sök- och filtreringsfunktioner för delade data
+  - [ ] Implementera följande-system för användare
+  - [ ] Skapa anpassningsbara notifieringar
+  - [ ] Implementera trädgårdsuppdateringsflöde
+
+## Fas 5: Testning och Optimering (8-10 veckor)
+- [ ] Enhetstestning
+  - [ ] Skriva tester för databas
+  - [ ] Implementera UI-tester
+  - [ ] Skriva tester för funktioner
+- [ ] Tillgänglighetstestning
+  - [ ] Testa med skärmläsare
+  - [ ] Verifiera kontrast och färger
+  - [ ] Testa tangentbordsnavigering
+  - [ ] Verifiera textstorlekar
+  - [ ] Testa med olika hjälpmedel
+- [ ] A/B-testning
+  - [ ] Sätt upp testramverk
+  - [ ] Konfigurera analytics för A/B-testning
+  - [ ] Implementera testvariabler
+  - [ ] Analysera testresultat
+- [ ] Prestandaoptimering
+  - [ ] Optimera databasanrop
+  - [ ] Implementera caching
+  - [ ] Optimera bildhantering
+- [ ] Användartestning
+  - [ ] Genomföra betatest
+  - [ ] Samla feedback
+  - [ ] Implementera förbättringar
+- [ ] Säkerhetstestning
+  - [ ] Genomför säkerhetsgranskning
+  - [ ] Testa datakryptering
+  - [ ] Verifiera autentisering
+  - [ ] Testa offline-säkerhet
+  - [ ] Granska behörigheter
+
+## Fas 6: Lansering (10-12 veckor)
+- [ ] App Store Förberedelser
+  - [ ] Skapa appikon
+  - [ ] Skriva beskrivning
+  - [ ] Förbereda skärmbilder
+- [ ] Dokumentation
+  - [ ] Skriva användarguide
+  - [ ] Skapa utvecklardokumentation
+  - [ ] Skriva API-dokumentation
+- [ ] Lansering
+  - [ ] Skicka in till App Store
+  - [ ] Förbereda marknadsföring
+  - [ ] Planera lanseringsevent
+
+## Fas 7: Underhåll och Utveckling (Pågående)
+- [ ] Regelbundna Uppdateringar
+  - [ ] Implementera buggfixar
+  - [ ] Lägga till nya funktioner
+  - [ ] Uppdatera databas
+  - [ ] Kontinuerlig A/B-testning av nya funktioner
+- [ ] Användarstöd
+  - [ ] Hantera supportärenden
+  - [ ] Samla användarfeedback
+  - [ ] Implementera förbättringar
+- [ ] Framtida Utveckling
+  - [ ] Planera nya funktioner
+  - [ ] Utvärdera teknisk skuld
+  - [ ] Optimera prestanda 
