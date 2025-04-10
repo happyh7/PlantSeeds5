@@ -115,9 +115,9 @@
       resolved="androidx.arch.core:core-common:2.2.0"/>
   <library
       name=":@@:data::debug"
-      jars="C:\Users\Metal\.gradle\caches\8.11.1\transforms\66150af3d7451dc9eea239efcf1d3291\transformed\out\jars\classes.jar;C:\Users\Metal\.gradle\caches\8.11.1\transforms\66150af3d7451dc9eea239efcf1d3291\transformed\out\jars\libs\R.jar"
+      jars="C:\Users\Metal\.gradle\caches\8.11.1\transforms\527798ea6ec7dbdd45cedac32165c829\transformed\out\jars\classes.jar;C:\Users\Metal\.gradle\caches\8.11.1\transforms\527798ea6ec7dbdd45cedac32165c829\transformed\out\jars\libs\R.jar"
       resolved="PlantSeeds5:data:unspecified"
-      folder="C:\Users\Metal\.gradle\caches\8.11.1\transforms\66150af3d7451dc9eea239efcf1d3291\transformed\out"
+      folder="C:\Users\Metal\.gradle\caches\8.11.1\transforms\527798ea6ec7dbdd45cedac32165c829\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

@@ -37,6 +37,25 @@ E:\PlantSeeds5\data\build.gradle.kts:45: Warning: A newer version of androidx.ro
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
+E:\PlantSeeds5\data\src\main\java\com\bps\plantseeds5\data\database\backup\AutoBackupScheduler.kt:18: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\PlantSeeds5\data\src\main\java\com\bps\plantseeds5\data\database\backup\BackupRepository.kt:47: Warning: Unnecessary; SDK_INT is always >= 24 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\PlantSeeds5\data\src\main\java\com\bps\plantseeds5\data\database\backup\BackupRepository.kt:53: Warning: Unnecessary; SDK_INT is always >= 24 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
 E:\PlantSeeds5\data\build.gradle.kts:43: Warning: Use version catalog instead [UseTomlInstead]
     implementation("androidx.room:room-runtime:2.6.1")
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,4 +75,4 @@ E:\PlantSeeds5\data\build.gradle.kts:48: Warning: Use version catalog instead [U
    declarations outside of the TOML file and suggests moving them (and in the
    IDE, provides a quickfix to performing the operation automatically).
 
-0 errors, 8 warnings
+0 errors, 11 warnings

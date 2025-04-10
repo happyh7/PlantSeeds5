@@ -4,4 +4,8 @@
 4
 5    <uses-sdk android:minSdkVersion="24" />
 6
-7</manifest>
+7    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+7-->E:\PlantSeeds5\data\src\main\AndroidManifest.xml:3:5-81
+7-->E:\PlantSeeds5\data\src\main\AndroidManifest.xml:3:22-78
+8
+9</manifest>

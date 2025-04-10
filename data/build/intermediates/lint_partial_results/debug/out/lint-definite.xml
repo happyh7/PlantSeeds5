@@ -2,6 +2,36 @@
 <incidents format="6" by="lint 8.2.2" type="incidents">
 
     <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 24">
+        <fix-data conditional="true"/>
+        <location
+            file="${:data*debug*MAIN*sourceProvider*0*javaDir*0}/com/bps/plantseeds5/data/database/backup/BackupRepository.kt"
+            line="47"
+            column="13"
+            startOffset="1355"
+            endLine="47"
+            endColumn="66"
+            endOffset="1408"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 24">
+        <fix-data conditional="true"/>
+        <location
+            file="${:data*debug*MAIN*sourceProvider*0*javaDir*0}/com/bps/plantseeds5/data/database/backup/BackupRepository.kt"
+            line="53"
+            column="13"
+            startOffset="1516"
+            endLine="53"
+            endColumn="66"
+            endOffset="1569"/>
+    </incident>
+
+    <incident
         id="OldTargetApi"
         severity="warning"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.">
@@ -24,32 +54,32 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-room-room-runtime2"
+            description="Replace with new library catalog declaration for androidx-room-room-runtime6"
             robot="true">
             <fix-replace
-                description="Replace with androidx-room-roomRuntime = &quot;2.6.1&quot;..."
+                description="Replace with androidx-room-roomRuntime5 = &quot;2.6.1&quot;..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-room-roomRuntime = &quot;2.6.1&quot;&#xA;">
+                replacement="androidx-room-roomRuntime5 = &quot;2.6.1&quot;&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="25"
                     endOffset="25"/>
             </fix-replace>
             <fix-replace
-                description="Replace with androidx-room-room-runtime2 = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidx-room-roomRuntime&quot; }..."
+                description="Replace with androidx-room-room-runtime6 = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidx-room-roomRuntime5&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-room-room-runtime2 = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidx-room-roomRuntime&quot; }&#xA;">
+                replacement="androidx-room-room-runtime6 = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidx-room-roomRuntime5&quot; }&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="312"
                     endOffset="312"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.room.room.runtime2"
+                description="Replace with libs.androidx.room.room.runtime6"
                 robot="true"
-                replacement="libs.androidx.room.room.runtime2">
+                replacement="libs.androidx.room.room.runtime6">
                 <range
                     file="${:data*projectDir}/build.gradle.kts"
                     startOffset="991"
@@ -71,32 +101,32 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-room-room-ktx2"
+            description="Replace with new library catalog declaration for androidx-room-room-ktx6"
             robot="true">
             <fix-replace
-                description="Replace with androidx-room-roomKtx = &quot;2.6.1&quot;..."
+                description="Replace with androidx-room-roomKtx5 = &quot;2.6.1&quot;..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-room-roomKtx = &quot;2.6.1&quot;&#xA;">
+                replacement="androidx-room-roomKtx5 = &quot;2.6.1&quot;&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="25"
                     endOffset="25"/>
             </fix-replace>
             <fix-replace
-                description="Replace with androidx-room-room-ktx2 = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidx-room-roomKtx&quot; }..."
+                description="Replace with androidx-room-room-ktx6 = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidx-room-roomKtx5&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-room-room-ktx2 = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidx-room-roomKtx&quot; }&#xA;">
+                replacement="androidx-room-room-ktx6 = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidx-room-roomKtx5&quot; }&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="312"
                     endOffset="312"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.room.room.ktx2"
+                description="Replace with libs.androidx.room.room.ktx6"
                 robot="true"
-                replacement="libs.androidx.room.room.ktx2">
+                replacement="libs.androidx.room.room.ktx6">
                 <range
                     file="${:data*projectDir}/build.gradle.kts"
                     startOffset="1046"
@@ -118,32 +148,32 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-room-room-compiler2"
+            description="Replace with new library catalog declaration for androidx-room-room-compiler6"
             robot="true">
             <fix-replace
-                description="Replace with androidx-room-roomCompiler = &quot;2.6.1&quot;..."
+                description="Replace with androidx-room-roomCompiler5 = &quot;2.6.1&quot;..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-room-roomCompiler = &quot;2.6.1&quot;&#xA;">
+                replacement="androidx-room-roomCompiler5 = &quot;2.6.1&quot;&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="25"
                     endOffset="25"/>
             </fix-replace>
             <fix-replace
-                description="Replace with androidx-room-room-compiler2 = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidx-room-roomCompiler&quot; }..."
+                description="Replace with androidx-room-room-compiler6 = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidx-room-roomCompiler5&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-room-room-compiler2 = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidx-room-roomCompiler&quot; }&#xA;">
+                replacement="androidx-room-room-compiler6 = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidx-room-roomCompiler5&quot; }&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="312"
                     endOffset="312"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.room.room.compiler2"
+                description="Replace with libs.androidx.room.room.compiler6"
                 robot="true"
-                replacement="libs.androidx.room.room.compiler2">
+                replacement="libs.androidx.room.room.compiler6">
                 <range
                     file="${:data*projectDir}/build.gradle.kts"
                     startOffset="1086"
@@ -165,32 +195,32 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for org-jetbrains-kotlinx-kotlinx-coroutines-android2"
+            description="Replace with new library catalog declaration for org-jetbrains-kotlinx-kotlinx-coroutines-android6"
             robot="true">
             <fix-replace
-                description="Replace with org-jetbrains-kotlinx-kotlinxCoroutinesAndroid = &quot;1.7.3&quot;..."
+                description="Replace with org-jetbrains-kotlinx-kotlinxCoroutinesAndroid5 = &quot;1.7.3&quot;..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="org-jetbrains-kotlinx-kotlinxCoroutinesAndroid = &quot;1.7.3&quot;&#xA;">
+                replacement="org-jetbrains-kotlinx-kotlinxCoroutinesAndroid5 = &quot;1.7.3&quot;&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="207"
                     endOffset="207"/>
             </fix-replace>
             <fix-replace
-                description="Replace with org-jetbrains-kotlinx-kotlinx-coroutines-android2 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinxCoroutinesAndroid&quot; }..."
+                description="Replace with org-jetbrains-kotlinx-kotlinx-coroutines-android6 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinxCoroutinesAndroid5&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="org-jetbrains-kotlinx-kotlinx-coroutines-android2 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinxCoroutinesAndroid&quot; }&#xA;">
+                replacement="org-jetbrains-kotlinx-kotlinx-coroutines-android6 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinxCoroutinesAndroid5&quot; }&#xA;">
                 <range
                     file="../gradle/libs.versions.toml"
                     startOffset="1515"
                     endOffset="1515"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.org.jetbrains.kotlinx.kotlinx.coroutines.android2"
+                description="Replace with libs.org.jetbrains.kotlinx.kotlinx.coroutines.android6"
                 robot="true"
-                replacement="libs.org.jetbrains.kotlinx.kotlinx.coroutines.android2">
+                replacement="libs.org.jetbrains.kotlinx.kotlinx.coroutines.android6">
                 <range
                     file="${:data*projectDir}/build.gradle.kts"
                     startOffset="1161"

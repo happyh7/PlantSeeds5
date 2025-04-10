@@ -1,6 +1,8 @@
 package com.bps.plantseeds5.data.database
 
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
@@ -17,6 +19,23 @@ abstract class PlantSeedsDatabase : RoomDatabase() {
     abstract fun seedDao(): SeedDao
 
     companion object {
+        @Volatile
+        private var INSTANCE: PlantSeedsDatabase? = null
+
+        fun getDatabase(context: Context): PlantSeedsDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    PlantSeedsDatabase::class.java,
+                    "plantseeds-database"
+                )
+                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+                .build()
+                INSTANCE = instance
+                instance
+            }
+        }
+
         // Här definierar vi våra migrations
         val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(db: SupportSQLiteDatabase) {
