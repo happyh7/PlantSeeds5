@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.2.2" type="incidents">
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 35"
+            oldString="34"
+            replacement="35"/>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="13"
+            column="9"
+            startOffset="272"
+            endLine="13"
+            endColumn="23"
+            endOffset="286"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-room-room-runtime2"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-room-roomRuntime = &quot;2.6.1&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-room-roomRuntime = &quot;2.6.1&quot;&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="25"
+                    endOffset="25"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-room-room-runtime2 = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidx-room-roomRuntime&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-room-room-runtime2 = { module = &quot;androidx.room:room-runtime&quot;, version.ref = &quot;androidx-room-roomRuntime&quot; }&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="312"
+                    endOffset="312"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.room.room.runtime2"
+                robot="true"
+                replacement="libs.androidx.room.room.runtime2">
+                <range
+                    file="${:data*projectDir}/build.gradle.kts"
+                    startOffset="991"
+                    endOffset="1025"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="43"
+            column="21"
+            startOffset="992"
+            endLine="43"
+            endColumn="53"
+            endOffset="1024"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-room-room-ktx2"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-room-roomKtx = &quot;2.6.1&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-room-roomKtx = &quot;2.6.1&quot;&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="25"
+                    endOffset="25"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-room-room-ktx2 = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidx-room-roomKtx&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-room-room-ktx2 = { module = &quot;androidx.room:room-ktx&quot;, version.ref = &quot;androidx-room-roomKtx&quot; }&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="312"
+                    endOffset="312"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.room.room.ktx2"
+                robot="true"
+                replacement="libs.androidx.room.room.ktx2">
+                <range
+                    file="${:data*projectDir}/build.gradle.kts"
+                    startOffset="1046"
+                    endOffset="1076"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="44"
+            column="21"
+            startOffset="1047"
+            endLine="44"
+            endColumn="49"
+            endOffset="1075"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-room-room-compiler2"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-room-roomCompiler = &quot;2.6.1&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-room-roomCompiler = &quot;2.6.1&quot;&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="25"
+                    endOffset="25"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with androidx-room-room-compiler2 = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidx-room-roomCompiler&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-room-room-compiler2 = { module = &quot;androidx.room:room-compiler&quot;, version.ref = &quot;androidx-room-roomCompiler&quot; }&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="312"
+                    endOffset="312"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.room.room.compiler2"
+                robot="true"
+                replacement="libs.androidx.room.room.compiler2">
+                <range
+                    file="${:data*projectDir}/build.gradle.kts"
+                    startOffset="1086"
+                    endOffset="1121"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="45"
+            column="10"
+            startOffset="1087"
+            endLine="45"
+            endColumn="43"
+            endOffset="1120"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for org-jetbrains-kotlinx-kotlinx-coroutines-android2"
+            robot="true">
+            <fix-replace
+                description="Replace with org-jetbrains-kotlinx-kotlinxCoroutinesAndroid = &quot;1.7.3&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="org-jetbrains-kotlinx-kotlinxCoroutinesAndroid = &quot;1.7.3&quot;&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="207"
+                    endOffset="207"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with org-jetbrains-kotlinx-kotlinx-coroutines-android2 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinxCoroutinesAndroid&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="org-jetbrains-kotlinx-kotlinx-coroutines-android2 = { module = &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android&quot;, version.ref = &quot;org-jetbrains-kotlinx-kotlinxCoroutinesAndroid&quot; }&#xA;">
+                <range
+                    file="../gradle/libs.versions.toml"
+                    startOffset="1515"
+                    endOffset="1515"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.org.jetbrains.kotlinx.kotlinx.coroutines.android2"
+                robot="true"
+                replacement="libs.org.jetbrains.kotlinx.kotlinx.coroutines.android2">
+                <range
+                    file="${:data*projectDir}/build.gradle.kts"
+                    startOffset="1161"
+                    endOffset="1217"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="48"
+            column="21"
+            startOffset="1162"
+            endLine="48"
+            endColumn="75"
+            endOffset="1216"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.7.0">
+        <fix-replace
+            description="Change to 2.7.0"
+            family="Update versions"
+            oldString="2.6.1"
+            replacement="2.7.0"/>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="43"
+            column="21"
+            startOffset="992"
+            endLine="43"
+            endColumn="53"
+            endOffset="1024"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.7.0">
+        <fix-replace
+            description="Change to 2.7.0"
+            family="Update versions"
+            oldString="2.6.1"
+            replacement="2.7.0"/>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="44"
+            column="21"
+            startOffset="1047"
+            endLine="44"
+            endColumn="49"
+            endOffset="1075"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.7.0">
+        <fix-replace
+            description="Change to 2.7.0"
+            family="Update versions"
+            oldString="2.6.1"
+            replacement="2.7.0"/>
+        <location
+            file="${:data*projectDir}/build.gradle.kts"
+            line="45"
+            column="10"
+            startOffset="1087"
+            endLine="45"
+            endColumn="43"
+            endOffset="1120"/>
+    </incident>
+
+</incidents>

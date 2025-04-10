@@ -34,9 +34,9 @@ public final class PlantSeedsDatabase_Impl extends PlantSeedsDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `seeds` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `sowingTime` TEXT NOT NULL, `harvestTime` TEXT NOT NULL, `createdAt` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `seeds` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `sowingTime` INTEGER NOT NULL, `harvestTime` INTEGER NOT NULL, `createdAt` INTEGER NOT NULL, `variety` TEXT, `difficultyLevel` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b41ba2296da7040922d335172c57864f')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7fb585b0e9c87cc571a1076d5d7a48fe')");
       }
 
       @Override
@@ -85,13 +85,15 @@ public final class PlantSeedsDatabase_Impl extends PlantSeedsDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsSeeds = new HashMap<String, TableInfo.Column>(6);
+        final HashMap<String, TableInfo.Column> _columnsSeeds = new HashMap<String, TableInfo.Column>(8);
         _columnsSeeds.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSeeds.put("name", new TableInfo.Column("name", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSeeds.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSeeds.put("sowingTime", new TableInfo.Column("sowingTime", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsSeeds.put("harvestTime", new TableInfo.Column("harvestTime", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSeeds.put("sowingTime", new TableInfo.Column("sowingTime", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSeeds.put("harvestTime", new TableInfo.Column("harvestTime", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsSeeds.put("createdAt", new TableInfo.Column("createdAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSeeds.put("variety", new TableInfo.Column("variety", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsSeeds.put("difficultyLevel", new TableInfo.Column("difficultyLevel", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysSeeds = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesSeeds = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoSeeds = new TableInfo("seeds", _columnsSeeds, _foreignKeysSeeds, _indicesSeeds);
@@ -103,7 +105,7 @@ public final class PlantSeedsDatabase_Impl extends PlantSeedsDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "b41ba2296da7040922d335172c57864f", "1b5a5c06ff82ad287ae888034d72d20f");
+    }, "7fb585b0e9c87cc571a1076d5d7a48fe", "a8a922126e0be366fc745986028e0444");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

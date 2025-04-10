@@ -12,8 +12,10 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.bps.plantseeds5.data.database.converters.DateConverters;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.IllegalStateException;
 import java.lang.Long;
 import java.lang.Object;
 import java.lang.Override;
@@ -21,6 +23,7 @@ import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
 import javax.annotation.processing.Generated;
@@ -35,6 +38,8 @@ public final class SeedDao_Impl implements SeedDao {
 
   private final EntityInsertionAdapter<Seed> __insertionAdapterOfSeed;
 
+  private final DateConverters __dateConverters = new DateConverters();
+
   private final EntityDeletionOrUpdateAdapter<Seed> __deletionAdapterOfSeed;
 
   private final EntityDeletionOrUpdateAdapter<Seed> __updateAdapterOfSeed;
@@ -45,7 +50,7 @@ public final class SeedDao_Impl implements SeedDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `seeds` (`id`,`name`,`description`,`sowingTime`,`harvestTime`,`createdAt`) VALUES (nullif(?, 0),?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `seeds` (`id`,`name`,`description`,`sowingTime`,`harvestTime`,`createdAt`,`variety`,`difficultyLevel`) VALUES (nullif(?, 0),?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -54,9 +59,30 @@ public final class SeedDao_Impl implements SeedDao {
         statement.bindLong(1, entity.getId());
         statement.bindString(2, entity.getName());
         statement.bindString(3, entity.getDescription());
-        statement.bindString(4, entity.getSowingTime());
-        statement.bindString(5, entity.getHarvestTime());
-        statement.bindLong(6, entity.getCreatedAt());
+        final Long _tmp = __dateConverters.dateToTimestamp(entity.getSowingTime());
+        if (_tmp == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindLong(4, _tmp);
+        }
+        final Long _tmp_1 = __dateConverters.dateToTimestamp(entity.getHarvestTime());
+        if (_tmp_1 == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindLong(5, _tmp_1);
+        }
+        final Long _tmp_2 = __dateConverters.dateToTimestamp(entity.getCreatedAt());
+        if (_tmp_2 == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindLong(6, _tmp_2);
+        }
+        if (entity.getVariety() == null) {
+          statement.bindNull(7);
+        } else {
+          statement.bindString(7, entity.getVariety());
+        }
+        statement.bindLong(8, entity.getDifficultyLevel());
       }
     };
     this.__deletionAdapterOfSeed = new EntityDeletionOrUpdateAdapter<Seed>(__db) {
@@ -76,7 +102,7 @@ public final class SeedDao_Impl implements SeedDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `seeds` SET `id` = ?,`name` = ?,`description` = ?,`sowingTime` = ?,`harvestTime` = ?,`createdAt` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `seeds` SET `id` = ?,`name` = ?,`description` = ?,`sowingTime` = ?,`harvestTime` = ?,`createdAt` = ?,`variety` = ?,`difficultyLevel` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -85,10 +111,31 @@ public final class SeedDao_Impl implements SeedDao {
         statement.bindLong(1, entity.getId());
         statement.bindString(2, entity.getName());
         statement.bindString(3, entity.getDescription());
-        statement.bindString(4, entity.getSowingTime());
-        statement.bindString(5, entity.getHarvestTime());
-        statement.bindLong(6, entity.getCreatedAt());
-        statement.bindLong(7, entity.getId());
+        final Long _tmp = __dateConverters.dateToTimestamp(entity.getSowingTime());
+        if (_tmp == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindLong(4, _tmp);
+        }
+        final Long _tmp_1 = __dateConverters.dateToTimestamp(entity.getHarvestTime());
+        if (_tmp_1 == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindLong(5, _tmp_1);
+        }
+        final Long _tmp_2 = __dateConverters.dateToTimestamp(entity.getCreatedAt());
+        if (_tmp_2 == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindLong(6, _tmp_2);
+        }
+        if (entity.getVariety() == null) {
+          statement.bindNull(7);
+        } else {
+          statement.bindString(7, entity.getVariety());
+        }
+        statement.bindLong(8, entity.getDifficultyLevel());
+        statement.bindLong(9, entity.getId());
       }
     };
   }
@@ -163,6 +210,8 @@ public final class SeedDao_Impl implements SeedDao {
           final int _cursorIndexOfSowingTime = CursorUtil.getColumnIndexOrThrow(_cursor, "sowingTime");
           final int _cursorIndexOfHarvestTime = CursorUtil.getColumnIndexOrThrow(_cursor, "harvestTime");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfVariety = CursorUtil.getColumnIndexOrThrow(_cursor, "variety");
+          final int _cursorIndexOfDifficultyLevel = CursorUtil.getColumnIndexOrThrow(_cursor, "difficultyLevel");
           final List<Seed> _result = new ArrayList<Seed>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final Seed _item;
@@ -172,13 +221,54 @@ public final class SeedDao_Impl implements SeedDao {
             _tmpName = _cursor.getString(_cursorIndexOfName);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            final String _tmpSowingTime;
-            _tmpSowingTime = _cursor.getString(_cursorIndexOfSowingTime);
-            final String _tmpHarvestTime;
-            _tmpHarvestTime = _cursor.getString(_cursorIndexOfHarvestTime);
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            _item = new Seed(_tmpId,_tmpName,_tmpDescription,_tmpSowingTime,_tmpHarvestTime,_tmpCreatedAt);
+            final Date _tmpSowingTime;
+            final Long _tmp;
+            if (_cursor.isNull(_cursorIndexOfSowingTime)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getLong(_cursorIndexOfSowingTime);
+            }
+            final Date _tmp_1 = __dateConverters.fromTimestamp(_tmp);
+            if (_tmp_1 == null) {
+              throw new IllegalStateException("Expected NON-NULL 'java.util.Date', but it was NULL.");
+            } else {
+              _tmpSowingTime = _tmp_1;
+            }
+            final Date _tmpHarvestTime;
+            final Long _tmp_2;
+            if (_cursor.isNull(_cursorIndexOfHarvestTime)) {
+              _tmp_2 = null;
+            } else {
+              _tmp_2 = _cursor.getLong(_cursorIndexOfHarvestTime);
+            }
+            final Date _tmp_3 = __dateConverters.fromTimestamp(_tmp_2);
+            if (_tmp_3 == null) {
+              throw new IllegalStateException("Expected NON-NULL 'java.util.Date', but it was NULL.");
+            } else {
+              _tmpHarvestTime = _tmp_3;
+            }
+            final Date _tmpCreatedAt;
+            final Long _tmp_4;
+            if (_cursor.isNull(_cursorIndexOfCreatedAt)) {
+              _tmp_4 = null;
+            } else {
+              _tmp_4 = _cursor.getLong(_cursorIndexOfCreatedAt);
+            }
+            final Date _tmp_5 = __dateConverters.fromTimestamp(_tmp_4);
+            if (_tmp_5 == null) {
+              throw new IllegalStateException("Expected NON-NULL 'java.util.Date', but it was NULL.");
+            } else {
+              _tmpCreatedAt = _tmp_5;
+            }
+            final String _tmpVariety;
+            if (_cursor.isNull(_cursorIndexOfVariety)) {
+              _tmpVariety = null;
+            } else {
+              _tmpVariety = _cursor.getString(_cursorIndexOfVariety);
+            }
+            final int _tmpDifficultyLevel;
+            _tmpDifficultyLevel = _cursor.getInt(_cursorIndexOfDifficultyLevel);
+            _item = new Seed(_tmpId,_tmpName,_tmpDescription,_tmpSowingTime,_tmpHarvestTime,_tmpCreatedAt,_tmpVariety,_tmpDifficultyLevel);
             _result.add(_item);
           }
           return _result;
@@ -213,6 +303,8 @@ public final class SeedDao_Impl implements SeedDao {
           final int _cursorIndexOfSowingTime = CursorUtil.getColumnIndexOrThrow(_cursor, "sowingTime");
           final int _cursorIndexOfHarvestTime = CursorUtil.getColumnIndexOrThrow(_cursor, "harvestTime");
           final int _cursorIndexOfCreatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "createdAt");
+          final int _cursorIndexOfVariety = CursorUtil.getColumnIndexOrThrow(_cursor, "variety");
+          final int _cursorIndexOfDifficultyLevel = CursorUtil.getColumnIndexOrThrow(_cursor, "difficultyLevel");
           final Seed _result;
           if (_cursor.moveToFirst()) {
             final long _tmpId;
@@ -221,13 +313,54 @@ public final class SeedDao_Impl implements SeedDao {
             _tmpName = _cursor.getString(_cursorIndexOfName);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            final String _tmpSowingTime;
-            _tmpSowingTime = _cursor.getString(_cursorIndexOfSowingTime);
-            final String _tmpHarvestTime;
-            _tmpHarvestTime = _cursor.getString(_cursorIndexOfHarvestTime);
-            final long _tmpCreatedAt;
-            _tmpCreatedAt = _cursor.getLong(_cursorIndexOfCreatedAt);
-            _result = new Seed(_tmpId,_tmpName,_tmpDescription,_tmpSowingTime,_tmpHarvestTime,_tmpCreatedAt);
+            final Date _tmpSowingTime;
+            final Long _tmp;
+            if (_cursor.isNull(_cursorIndexOfSowingTime)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getLong(_cursorIndexOfSowingTime);
+            }
+            final Date _tmp_1 = __dateConverters.fromTimestamp(_tmp);
+            if (_tmp_1 == null) {
+              throw new IllegalStateException("Expected NON-NULL 'java.util.Date', but it was NULL.");
+            } else {
+              _tmpSowingTime = _tmp_1;
+            }
+            final Date _tmpHarvestTime;
+            final Long _tmp_2;
+            if (_cursor.isNull(_cursorIndexOfHarvestTime)) {
+              _tmp_2 = null;
+            } else {
+              _tmp_2 = _cursor.getLong(_cursorIndexOfHarvestTime);
+            }
+            final Date _tmp_3 = __dateConverters.fromTimestamp(_tmp_2);
+            if (_tmp_3 == null) {
+              throw new IllegalStateException("Expected NON-NULL 'java.util.Date', but it was NULL.");
+            } else {
+              _tmpHarvestTime = _tmp_3;
+            }
+            final Date _tmpCreatedAt;
+            final Long _tmp_4;
+            if (_cursor.isNull(_cursorIndexOfCreatedAt)) {
+              _tmp_4 = null;
+            } else {
+              _tmp_4 = _cursor.getLong(_cursorIndexOfCreatedAt);
+            }
+            final Date _tmp_5 = __dateConverters.fromTimestamp(_tmp_4);
+            if (_tmp_5 == null) {
+              throw new IllegalStateException("Expected NON-NULL 'java.util.Date', but it was NULL.");
+            } else {
+              _tmpCreatedAt = _tmp_5;
+            }
+            final String _tmpVariety;
+            if (_cursor.isNull(_cursorIndexOfVariety)) {
+              _tmpVariety = null;
+            } else {
+              _tmpVariety = _cursor.getString(_cursorIndexOfVariety);
+            }
+            final int _tmpDifficultyLevel;
+            _tmpDifficultyLevel = _cursor.getInt(_cursorIndexOfDifficultyLevel);
+            _result = new Seed(_tmpId,_tmpName,_tmpDescription,_tmpSowingTime,_tmpHarvestTime,_tmpCreatedAt,_tmpVariety,_tmpDifficultyLevel);
           } else {
             _result = null;
           }

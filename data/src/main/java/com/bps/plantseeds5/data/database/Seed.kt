@@ -12,5 +12,7 @@ data class Seed(
     val description: String,
     val sowingTime: Date,
     val harvestTime: Date,
-    val createdAt: Date = Date()
+    val createdAt: Date = Date(),
+    val variety: String? = null,
+    val difficultyLevel: Int = 1
 ) 
