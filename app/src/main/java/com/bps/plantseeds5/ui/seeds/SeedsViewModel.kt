@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.bps.plantseeds5.data.database.Seed
 import com.bps.plantseeds5.data.database.SeedDao
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -14,8 +14,23 @@ import javax.inject.Inject
 class SeedsViewModel @Inject constructor(
     private val seedDao: SeedDao
 ) : ViewModel() {
+    private val _searchQuery = MutableStateFlow("")
+    val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
 
-    val seeds: Flow<List<Seed>> = seedDao.getAllSeeds()
+    val seeds: Flow<List<Seed>> = combine(
+        seedDao.getAllSeeds(),
+        searchQuery
+    ) { seeds, query ->
+        if (query.isBlank()) {
+            seeds
+        } else {
+            seeds.filter { seed ->
+                seed.name.contains(query, ignoreCase = true) ||
+                seed.description.contains(query, ignoreCase = true) ||
+                seed.variety?.contains(query, ignoreCase = true) == true
+            }
+        }
+    }
 
     fun insertSeed(
         name: String,
@@ -35,5 +50,9 @@ class SeedsViewModel @Inject constructor(
                 difficultyLevel = difficultyLevel
             )
         }
+    }
+
+    fun onSearchQueryChanged(query: String) {
+        _searchQuery.value = query
     }
 } 
