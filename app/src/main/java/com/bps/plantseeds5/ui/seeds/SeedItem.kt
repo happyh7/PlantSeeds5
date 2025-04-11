@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.bps.plantseeds5.common.MonthUtils
 import com.bps.plantseeds5.data.database.Seed
 
 @Composable
@@ -53,31 +54,15 @@ fun SeedItem(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "Såtid: ${getMonthName(seed.sowingTime)}",
+                    text = "Såtid: ${MonthUtils.getMonthName(seed.sowingTime)}",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 
                 Text(
-                    text = "Skörd: ${getMonthName(seed.harvestTime)}",
+                    text = "Skörd: ${MonthUtils.getMonthName(seed.harvestTime)}",
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
         }
     }
-}
-
-private fun getMonthName(month: Int): String = when (month) {
-    1 -> "Januari"
-    2 -> "Februari"
-    3 -> "Mars"
-    4 -> "April"
-    5 -> "Maj"
-    6 -> "Juni"
-    7 -> "Juli"
-    8 -> "Augusti"
-    9 -> "September"
-    10 -> "Oktober"
-    11 -> "November"
-    12 -> "December"
-    else -> "Okänd"
 } 

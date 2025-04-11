@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.bps.plantseeds5.common.rememberDebouncedState
 import com.bps.plantseeds5.data.database.Seed
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -25,6 +26,13 @@ fun SeedsScreen(
 ) {
     val seeds by viewModel.seeds.collectAsState(initial = emptyList())
     val searchQuery by viewModel.searchQuery.collectAsState()
+
+    // Använd debounce för sökningen
+    val debouncedSearchQuery = rememberDebouncedState(
+        initialValue = searchQuery,
+        delayMillis = 300L,
+        onChange = viewModel::onSearchQueryChanged
+    )
 
     Scaffold(
         topBar = {
@@ -50,8 +58,8 @@ fun SeedsScreen(
         ) {
             // Sökfält
             OutlinedTextField(
-                value = searchQuery,
-                onValueChange = viewModel::onSearchQueryChanged,
+                value = debouncedSearchQuery,
+                onValueChange = { viewModel.onSearchQueryChanged(it) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
@@ -60,13 +68,16 @@ fun SeedsScreen(
                 singleLine = true
             )
 
-            // Frölista
+            // Frölista med optimerad rendering
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(seeds) { seed ->
+                items(
+                    items = seeds,
+                    key = { seed -> seed.id } // Använd unikt ID för att optimera rendering
+                ) { seed ->
                     SeedItem(
                         seed = seed,
                         onSeedClick = { onSeedClick(seed) }

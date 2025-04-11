@@ -10,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.bps.plantseeds5.common.MonthUtils
 import com.bps.plantseeds5.data.database.ValidationException
 import com.bps.plantseeds5.data.database.Seed
 
@@ -94,7 +95,7 @@ fun AddSeedScreen(
                 valueRange = 1f..12f,
                 steps = 11
             )
-            Text(getMonthName(sowingTime))
+            Text(MonthUtils.getMonthName(sowingTime))
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -111,7 +112,7 @@ fun AddSeedScreen(
                 valueRange = 1f..12f,
                 steps = 11
             )
-            Text(getMonthName(harvestTime))
+            Text(MonthUtils.getMonthName(harvestTime))
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -149,20 +150,4 @@ fun AddSeedScreen(
             }
         }
     }
-}
-
-private fun getMonthName(month: Int): String = when (month) {
-    1 -> "Januari"
-    2 -> "Februari"
-    3 -> "Mars"
-    4 -> "April"
-    5 -> "Maj"
-    6 -> "Juni"
-    7 -> "Juli"
-    8 -> "Augusti"
-    9 -> "September"
-    10 -> "Oktober"
-    11 -> "November"
-    12 -> "December"
-    else -> "Okänd"
 } 

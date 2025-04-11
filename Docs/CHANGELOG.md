@@ -19,3 +19,10 @@ Exempel på korrekt format:
 ```
 
 ## Historik
+
+## [2024-04-11] - Sökfunktion och Optimeringar
+- 10:30: Implementerat sökfunktion i SeedsScreen med debounce för bättre prestanda
+- 10:45: Skapat common-modul för delade komponenter
+- 11:00: Flyttat getMonthName till MonthUtils för att undvika kodduplicering
+- 11:15: Optimerat listrendering med unika nycklar i LazyColumn
+- 11:30: Implementerat DebounceUtils för hantering av sökning och andra användarinteraktioner
