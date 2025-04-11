@@ -6,9 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.bps.plantseeds5.data.database.Seed
 import com.bps.plantseeds5.data.database.SeedDao
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -16,10 +15,25 @@ class SeedsViewModel @Inject constructor(
     private val seedDao: SeedDao
 ) : ViewModel() {
 
-    val seeds: StateFlow<List<Seed>> = seedDao.getAllSeeds()
-        .stateIn(
-            scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000),
-            initialValue = emptyList()
-        )
+    val seeds: Flow<List<Seed>> = seedDao.getAllSeeds()
+
+    fun insertSeed(
+        name: String,
+        description: String,
+        sowingTime: Int,
+        harvestTime: Int,
+        variety: String? = null,
+        difficultyLevel: Int = 1
+    ) {
+        viewModelScope.launch {
+            seedDao.insertSeed(
+                name = name,
+                description = description,
+                sowingTime = sowingTime,
+                harvestTime = harvestTime,
+                variety = variety,
+                difficultyLevel = difficultyLevel
+            )
+        }
+    }
 } 
