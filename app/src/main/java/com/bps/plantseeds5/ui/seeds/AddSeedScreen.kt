@@ -25,7 +25,7 @@ fun AddSeedScreen(
     var variety by remember { mutableStateOf("") }
     var sowingTime by remember { mutableStateOf(1) }
     var harvestTime by remember { mutableStateOf(1) }
-    var difficultyLevel by remember { mutableStateOf(1) }
+    var difficulty by remember { mutableStateOf(1) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     Scaffold(
@@ -34,7 +34,7 @@ fun AddSeedScreen(
                 title = { Text("Lägg till frö") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Tillbaka")
+                        Text("←")
                     }
                 }
             )
@@ -76,67 +76,58 @@ fun AddSeedScreen(
             OutlinedTextField(
                 value = variety,
                 onValueChange = { variety = it },
-                label = { Text("Sort (valfritt)") },
+                label = { Text("Sort") },
                 modifier = Modifier.fillMaxWidth()
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text("Såtid")
+            Text("Såtid (månad)")
             Slider(
                 value = sowingTime.toFloat(),
-                onValueChange = { 
-                    sowingTime = it.toInt()
-                    // Uppdatera skördetid om den är tidigare än såtiden
-                    if (harvestTime < sowingTime) {
-                        harvestTime = sowingTime
-                    }
-                },
+                onValueChange = { sowingTime = it.toInt() },
                 valueRange = 1f..12f,
-                steps = 11
+                steps = 10,
+                modifier = Modifier.fillMaxWidth()
             )
-            Text(MonthUtils.getMonthName(sowingTime))
+            Text("Månad: $sowingTime")
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text("Skördetid")
+            Text("Skördetid (månad)")
             Slider(
                 value = harvestTime.toFloat(),
-                onValueChange = { 
-                    harvestTime = it.toInt()
-                    // Uppdatera såtid om den är senare än skördetiden
-                    if (sowingTime > harvestTime) {
-                        sowingTime = harvestTime
-                    }
-                },
+                onValueChange = { harvestTime = it.toInt() },
                 valueRange = 1f..12f,
-                steps = 11
+                steps = 10,
+                modifier = Modifier.fillMaxWidth()
             )
-            Text(MonthUtils.getMonthName(harvestTime))
+            Text("Månad: $harvestTime")
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text("Svårighetsgrad")
             Slider(
-                value = difficultyLevel.toFloat(),
-                onValueChange = { difficultyLevel = it.toInt() },
+                value = difficulty.toFloat(),
+                onValueChange = { difficulty = it.toInt() },
                 valueRange = 1f..5f,
-                steps = 4
+                steps = 3,
+                modifier = Modifier.fillMaxWidth()
             )
-            Text("$difficultyLevel av 5")
+            Text("Nivå: $difficulty")
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(
                 onClick = {
                     try {
-                        viewModel.insertSeed(
+                        viewModel.addSeed(
                             name = name,
                             description = description,
+                            variety = variety,
                             sowingTime = sowingTime,
                             harvestTime = harvestTime,
-                            variety = variety.takeIf { it.isNotBlank() },
-                            difficultyLevel = difficultyLevel
+                            difficulty = difficulty
                         )
                         onNavigateBack()
                     } catch (e: ValidationException) {

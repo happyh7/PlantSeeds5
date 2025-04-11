@@ -3,19 +3,13 @@ package com.bps.plantseeds5.ui.seeds
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.bps.plantseeds5.common.rememberDebouncedState
-import com.bps.plantseeds5.data.database.Seed
+import com.bps.plantseeds5.data.Seed
+import com.bps.plantseeds5.common.MonthUtils
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -27,27 +21,17 @@ fun SeedsScreen(
     val seeds by viewModel.seeds.collectAsState(initial = emptyList())
     val searchQuery by viewModel.searchQuery.collectAsState()
 
-    // Använd debounce för sökningen
-    val debouncedSearchQuery = rememberDebouncedState(
-        initialValue = searchQuery,
-        delayMillis = 300L,
-        onChange = viewModel::onSearchQueryChanged
-    )
-
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Frön") },
-                actions = {
-                    IconButton(onClick = onAddSeed) {
-                        Icon(Icons.Default.Add, contentDescription = "Lägg till frö")
-                    }
-                }
+                title = { Text("Mina frön") }
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = onAddSeed) {
-                Icon(Icons.Default.Add, contentDescription = "Lägg till frö")
+            FloatingActionButton(
+                onClick = onAddSeed
+            ) {
+                Text("+")
             }
         }
     ) { padding ->
@@ -56,34 +40,69 @@ fun SeedsScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            // Sökfält
             OutlinedTextField(
-                value = debouncedSearchQuery,
+                value = searchQuery,
                 onValueChange = { viewModel.onSearchQueryChanged(it) },
+                label = { Text("Sök") },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp),
-                placeholder = { Text("Sök frön...") },
-                leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Sök") },
-                singleLine = true
+                    .padding(16.dp)
             )
 
-            // Frölista med optimerad rendering
             LazyColumn(
-                modifier = Modifier.fillMaxSize(),
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(
-                    items = seeds,
-                    key = { seed -> seed.id } // Använd unikt ID för att optimera rendering
-                ) { seed ->
+                items(seeds) { seed ->
                     SeedItem(
                         seed = seed,
                         onSeedClick = { onSeedClick(seed) }
                     )
                 }
             }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SeedItem(
+    seed: Seed,
+    onSeedClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        onClick = onSeedClick
+    ) {
+        Column(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = seed.name,
+                style = MaterialTheme.typography.titleMedium
+            )
+            if (seed.variety.isNotBlank()) {
+                Text(
+                    text = seed.variety,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+            Text(
+                text = "Såtid: ${MonthUtils.getMonthName(seed.sowingTime)}",
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Text(
+                text = "Skördetid: ${MonthUtils.getMonthName(seed.harvestTime)}",
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Text(
+                text = "Svårighetsgrad: ${seed.difficulty} av 5",
+                style = MaterialTheme.typography.bodyMedium
+            )
         }
     }
 } 

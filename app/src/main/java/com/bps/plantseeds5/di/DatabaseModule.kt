@@ -1,8 +1,10 @@
 package com.bps.plantseeds5.di
 
 import android.content.Context
-import com.bps.plantseeds5.data.database.PlantSeedsDatabase
-import com.bps.plantseeds5.data.database.SeedDao
+import androidx.room.Room
+import com.bps.plantseeds5.data.PlantDao
+import com.bps.plantseeds5.data.PlantSeedsDatabase
+import com.bps.plantseeds5.data.SeedDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,11 +19,20 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): PlantSeedsDatabase {
-        return PlantSeedsDatabase.getDatabase(context)
+        return Room.databaseBuilder(
+            context,
+            PlantSeedsDatabase::class.java,
+            "plantseeds.db"
+        ).build()
     }
 
     @Provides
     fun provideSeedDao(database: PlantSeedsDatabase): SeedDao {
         return database.seedDao()
+    }
+
+    @Provides
+    fun providePlantDao(database: PlantSeedsDatabase): PlantDao {
+        return database.plantDao()
     }
 } 
