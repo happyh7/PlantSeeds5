@@ -43,7 +43,21 @@
   - [ ] Skapa växtloggar
   - [ ] Implementera bildhantering
 
-## Fas 3: Användargränssnitt (4-6 veckor)
+## Fas 3: Arkitektur och Dokumentation (4-5 veckor)
+- [ ] Dokumentation
+  - [ ] Utöka README.md
+  - [ ] Skapa arkitekturdokumentation
+  - [ ] Dokumentera komponentanvändning
+  - [ ] Skapa utvecklarguider
+  - [ ] Dokumentera API:er
+- [ ] Modulstruktur
+  - [ ] Utöka common-modul med delade komponenter
+  - [ ] Skapa feature-modul för isolering
+  - [ ] Implementera usecase-lager i domain
+  - [ ] Skapa mapper-lager för modellkonvertering
+  - [ ] Förbättra modulberoenden
+
+## Fas 4: Användargränssnitt (5-7 veckor)
 - [ ] Huvudnavigering
   - [ ] Implementera bottom navigation
   - [ ] Skapa huvudskärmar
@@ -72,7 +86,7 @@
   - [ ] Implementera surfplattespecifika vyer
   - [ ] Optimera för olika skärmstorlekar
 
-## Fas 4: Funktioner (6-8 veckor)
+## Fas 5: Funktioner (7-9 veckor)
 - [ ] Påminnelser
   - [ ] Implementera vattningspåminnelser
   - [ ] Skapa gödslingspåminnelser
@@ -96,62 +110,43 @@
   - [ ] Skapa anpassningsbara notifieringar
   - [ ] Implementera trädgårdsuppdateringsflöde
 
-## Fas 5: Testning och Optimering (8-10 veckor)
+## Fas 6: Testning och Optimering (9-10 veckor)
 - [ ] Enhetstestning
-  - [ ] Skriva tester för databas
+  - [ ] Skapa testplan
+  - [ ] Implementera enhetstester
+  - [ ] Skapa integrationstester
   - [ ] Implementera UI-tester
-  - [ ] Skriva tester för funktioner
-- [ ] Tillgänglighetstestning
-  - [ ] Testa med skärmläsare
-  - [ ] Verifiera kontrast och färger
-  - [ ] Testa tangentbordsnavigering
-  - [ ] Verifiera textstorlekar
-  - [ ] Testa med olika hjälpmedel
-- [ ] A/B-testning
-  - [ ] Sätt upp testramverk
-  - [ ] Konfigurera analytics för A/B-testning
-  - [ ] Implementera testvariabler
-  - [ ] Analysera testresultat
 - [ ] Prestandaoptimering
-  - [ ] Optimera databasanrop
+  - [ ] Optimera databasfrågor
   - [ ] Implementera caching
-  - [ ] Optimera bildhantering
-- [ ] Användartestning
-  - [ ] Genomföra betatest
-  - [ ] Samla feedback
-  - [ ] Implementera förbättringar
-- [ ] Säkerhetstestning
+  - [ ] Förbättra bildhantering
+  - [ ] Optimera nätverksanrop
+- [ ] Säkerhet
   - [ ] Genomför säkerhetsgranskning
-  - [ ] Testa datakryptering
-  - [ ] Verifiera autentisering
-  - [ ] Testa offline-säkerhet
-  - [ ] Granska behörigheter
+  - [ ] Implementera ytterligare säkerhetsåtgärder
+  - [ ] Testa säkerhetskopiering och återställning
+  - [ ] Verifiera kryptering
 
-## Fas 6: Lansering (10-12 veckor)
-- [ ] App Store Förberedelser
-  - [ ] Skapa appikon
-  - [ ] Skriva beskrivning
-  - [ ] Förbereda skärmbilder
-- [ ] Dokumentation
-  - [ ] Skriva användarguide
-  - [ ] Skapa utvecklardokumentation
-  - [ ] Skriva API-dokumentation
-- [ ] Lansering
-  - [ ] Skicka in till App Store
-  - [ ] Förbereda marknadsföring
-  - [ ] Planera lanseringsevent
-
-## Fas 7: Underhåll och Utveckling (Pågående)
-- [ ] Regelbundna Uppdateringar
-  - [ ] Implementera buggfixar
-  - [ ] Lägga till nya funktioner
-  - [ ] Uppdatera databas
-  - [ ] Kontinuerlig A/B-testning av nya funktioner
-- [ ] Användarstöd
-  - [ ] Hantera supportärenden
-  - [ ] Samla användarfeedback
+## Fas 7: Lanseringsförberedelser (10-11 veckor)
+- [ ] App Store Optimization
+  - [ ] Optimera appbeskrivning
+  - [ ] Skapa marknadsföringsmaterial
+  - [ ] Förbered skärmbilder
+  - [ ] Skapa appikoner
+- [ ] Beta-testning
+  - [ ] Distribuera beta-version
+  - [ ] Samla in feedback
   - [ ] Implementera förbättringar
-- [ ] Framtida Utveckling
-  - [ ] Planera nya funktioner
-  - [ ] Utvärdera teknisk skuld
-  - [ ] Optimera prestanda 
+  - [ ] Förbered lanseringsversion
+
+## Fas 8: Lanseringsföljd (11-12 veckor)
+- [ ] Övervakning och Support
+  - [ ] Implementera felrapportering
+  - [ ] Sätt upp supportsystem
+  - [ ] Skapa FAQ
+  - [ ] Förbered uppdateringsplan
+- [ ] Kontinuerlig förbättring
+  - [ ] Analysera användardata
+  - [ ] Planera framtida uppdateringar
+  - [ ] Prioritera förbättringar
+  - [ ] Förbered nästa release 

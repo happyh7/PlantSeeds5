@@ -20,6 +20,12 @@ Exempel på korrekt format:
 
 ## Historik
 
+## [2024-04-12] - Roadmap och Dokumentation
+- 15:30: Uppdaterat roadmap med ny arkitektur- och dokumentationsfas
+- 15:45: Lagt till planer för modulstrukturförbättringar
+- 16:00: Uppdaterat testnings- och lanseringsfaser
+- 16:15: Förbättrat tidsplanering och logisk progression
+
 ## [2024-04-12] - Databasstruktur och Säkerhetskopiering
 - 14:30: Implementerat PlantEntity och PlantDao för växthantering
 - 14:45: Lagt till AutoBackupService för automatisk säkerhetskopiering av databasen
