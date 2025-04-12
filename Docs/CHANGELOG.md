@@ -20,6 +20,12 @@ Exempel på korrekt format:
 
 ## Historik
 
+## [2024-04-12] - Databasåterställning och Validering
+- 16:30: Implementerat DatabaseRestoreService för säker återställning av databasen
+- 16:45: Lagt till valideringsfunktioner i PlantEntity för datakvalitet
+- 17:00: Uppdaterat Plant domain-modell med nya fält för vattning och gödsling
+- 17:15: Implementerat validering i PlantDao för säker datainsättning
+
 ## [2024-04-12] - Roadmap och Dokumentation
 - 15:30: Uppdaterat roadmap med ny arkitektur- och dokumentationsfas
 - 15:45: Lagt till planer för modulstrukturförbättringar
