@@ -24,10 +24,28 @@ interface PlantDao {
     fun searchPlants(query: String): Flow<List<PlantEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlant(plant: PlantEntity): Long
+    suspend fun insertPlant(plant: PlantEntity): Long {
+        val errors = plant.validate()
+        if (errors.isNotEmpty()) {
+            throw IllegalArgumentException("Invalid plant data: ${errors.joinToString(", ")}")
+        }
+        return insert(plant)
+    }
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(plant: PlantEntity): Long
 
     @Update
-    suspend fun updatePlant(plant: PlantEntity)
+    suspend fun updatePlant(plant: PlantEntity) {
+        val errors = plant.validate()
+        if (errors.isNotEmpty()) {
+            throw IllegalArgumentException("Invalid plant data: ${errors.joinToString(", ")}")
+        }
+        update(plant)
+    }
+
+    @Update
+    suspend fun update(plant: PlantEntity)
 
     @Delete
     suspend fun deletePlant(plant: PlantEntity)
