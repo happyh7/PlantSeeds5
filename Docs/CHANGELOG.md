@@ -20,6 +20,12 @@ Exempel på korrekt format:
 
 ## Historik
 
+## [2024-04-12] - Databasstruktur och Säkerhetskopiering
+- 14:30: Implementerat PlantEntity och PlantDao för växthantering
+- 14:45: Lagt till AutoBackupService för automatisk säkerhetskopiering av databasen
+- 15:00: Fixat paketstruktur för AutoBackupService i manifestet
+- 15:15: Implementerat null-safety i AutoBackupService
+
 ## [2024-04-11] - Sökfunktion och Optimeringar
 - 10:30: Implementerat sökfunktion i SeedsScreen med debounce för bättre prestanda
 - 10:45: Skapat common-modul för delade komponenter
