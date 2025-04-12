@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/animator/fragment_close_exit.xml",
+        "source": "com.bps.plantseeds5.modules.common-fragment-1.5.1-20:/animator/fragment_close_exit.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/animator/fragment_fade_enter.xml",
+        "source": "com.bps.plantseeds5.modules.common-fragment-1.5.1-20:/animator/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/animator/fragment_close_enter.xml",
+        "source": "com.bps.plantseeds5.modules.common-fragment-1.5.1-20:/animator/fragment_close_enter.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/animator/fragment_open_enter.xml",
+        "source": "com.bps.plantseeds5.modules.common-fragment-1.5.1-20:/animator/fragment_open_enter.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/animator/fragment_fade_exit.xml",
+        "source": "com.bps.plantseeds5.modules.common-fragment-1.5.1-20:/animator/fragment_fade_exit.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/animator/fragment_open_exit.xml",
+        "source": "com.bps.plantseeds5.modules.common-fragment-1.5.1-20:/animator/fragment_open_exit.xml"
+    }
+]

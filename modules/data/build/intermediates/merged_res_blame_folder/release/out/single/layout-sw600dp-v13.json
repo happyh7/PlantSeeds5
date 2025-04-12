@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.bps.plantseeds5.modules.data-merged_res-34:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "com.bps.plantseeds5.modules.data-material-1.11.0-17:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.data-merged_res-34:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "com.bps.plantseeds5.modules.data-material-1.11.0-17:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    }
+]

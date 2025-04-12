@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/layout-v21/notification_action.xml",
+        "source": "com.bps.plantseeds5.modules.common-core-1.12.0-18:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.bps.plantseeds5.modules.common-core-1.12.0-18:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.bps.plantseeds5.modules.common-core-1.12.0-18:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.common-merged_res-41:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.bps.plantseeds5.modules.common-core-1.12.0-18:/layout-v21/notification_template_custom_big.xml"
+    }
+]

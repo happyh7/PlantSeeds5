@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/layout/ime_secondary_split_test_activity.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/layout/ime_secondary_split_test_activity.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/layout/notification_template_part_chronometer.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/layout/custom_dialog.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/layout/ime_base_split_test_activity.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/layout/ime_base_split_test_activity.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/layout/notification_template_part_time.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/layout/notification_template_part_time.xml"
+    }
+]

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.2.2" type="incidents">
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="43"
+            column="21"
+            startOffset="1011"
+            endLine="43"
+            endColumn="50"
+            endOffset="1040"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0">
+        <fix-replace
+            description="Change to 1.7.0"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.0"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="44"
+            column="21"
+            startOffset="1063"
+            endLine="44"
+            endColumn="55"
+            endOffset="1097"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="45"
+            column="21"
+            startOffset="1120"
+            endLine="45"
+            endColumn="64"
+            endOffset="1163"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="47"
+            column="32"
+            startOffset="1242"
+            endLine="47"
+            endColumn="61"
+            endOffset="1271"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="48"
+            column="32"
+            startOffset="1305"
+            endLine="48"
+            endColumn="74"
+            endOffset="1347"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.7.0">
+        <fix-replace
+            description="Change to 2.7.0"
+            family="Update versions"
+            oldString="2.6.1"
+            replacement="2.7.0"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="51"
+            column="21"
+            startOffset="1383"
+            endLine="51"
+            endColumn="53"
+            endOffset="1415"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.7.0">
+        <fix-replace
+            description="Change to 2.7.0"
+            family="Update versions"
+            oldString="2.6.1"
+            replacement="2.7.0"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="52"
+            column="21"
+            startOffset="1438"
+            endLine="52"
+            endColumn="49"
+            endOffset="1466"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.7.0">
+        <fix-replace
+            description="Change to 2.7.0"
+            family="Update versions"
+            oldString="2.6.1"
+            replacement="2.7.0"/>
+        <location
+            file="${:modules:data*projectDir}/build.gradle.kts"
+            line="53"
+            column="10"
+            startOffset="1478"
+            endLine="53"
+            endColumn="43"
+            endOffset="1511"/>
+    </incident>
+
+</incidents>

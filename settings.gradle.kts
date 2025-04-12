@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
@@ -15,5 +15,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "PlantSeeds5"
 include(":app")
-include(":data")
+include(":modules:common")
+include(":modules:data")
+include(":modules:domain")
+include(":modules:ui")
  

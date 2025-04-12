@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.2.2" type="incidents">
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="46"
+            column="21"
+            startOffset="1094"
+            endLine="46"
+            endColumn="50"
+            endOffset="1123"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.8.7">
+        <fix-replace
+            description="Change to 2.8.7"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.8.7"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="47"
+            column="21"
+            startOffset="1146"
+            endLine="47"
+            endColumn="67"
+            endOffset="1192"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.10.1"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="48"
+            column="21"
+            startOffset="1215"
+            endLine="48"
+            endColumn="61"
+            endOffset="1255"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.8.7">
+        <fix-replace
+            description="Change to 2.8.7"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.8.7"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="54"
+            column="21"
+            startOffset="1569"
+            endLine="54"
+            endColumn="73"
+            endOffset="1621"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.7 is available: 2.8.9">
+        <fix-replace
+            description="Change to 2.8.9"
+            family="Update versions"
+            oldString="2.7.7"
+            replacement="2.8.9"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="55"
+            column="21"
+            startOffset="1644"
+            endLine="55"
+            endColumn="65"
+            endOffset="1688"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.hilt:hilt-navigation-compose than 1.1.0 is available: 1.2.0">
+        <fix-replace
+            description="Change to 1.2.0"
+            family="Update versions"
+            oldString="1.1.0"
+            replacement="1.2.0"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="59"
+            column="21"
+            startOffset="1826"
+            endLine="59"
+            endColumn="64"
+            endOffset="1869"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="62"
+            column="32"
+            startOffset="1949"
+            endLine="62"
+            endColumn="61"
+            endOffset="1978"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"/>
+        <location
+            file="${:modules:ui*projectDir}/build.gradle.kts"
+            line="63"
+            column="32"
+            startOffset="2012"
+            endLine="63"
+            endColumn="74"
+            endOffset="2054"/>
+    </incident>
+
+</incidents>

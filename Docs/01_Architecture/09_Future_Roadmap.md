@@ -34,6 +34,14 @@ class UXManager @Inject constructor() {
                 priority = Priority.MEDIUM,
                 estimatedTime = Duration.ofDays(7),
                 status = Status.PLANNED
+            ),
+            UXImprovement(
+                id = "UX-003",
+                title = "Utökad dokumentation",
+                description = "Utöka README.md och lägg till dokumentation om arkitektur och komponentanvändning",
+                priority = Priority.MEDIUM,
+                estimatedTime = Duration.ofDays(5),
+                status = Status.PLANNED
             )
         )
     }
@@ -45,6 +53,42 @@ class UXManager @Inject constructor() {
 - Implementera caching
 - Förbättra bildhantering
 - Optimera nätverksanrop
+
+### 1.3 Modulstruktur
+```kotlin
+// Modulstrukturförbättringar
+data class ModuleImprovement(
+    val id: String,
+    val title: String,
+    val description: String,
+    val priority: Priority,
+    val estimatedTime: Duration,
+    val status: Status
+)
+
+class ModuleManager @Inject constructor() {
+    fun planImprovements(): List<ModuleImprovement> {
+        return listOf(
+            ModuleImprovement(
+                id = "MOD-001",
+                title = "Utökning av common-modul",
+                description = "Lägg till fler delade komponenter i common-modulen",
+                priority = Priority.MEDIUM,
+                estimatedTime = Duration.ofDays(7),
+                status = Status.PLANNED
+            ),
+            ModuleImprovement(
+                id = "MOD-002",
+                title = "Feature-modul",
+                description = "Skapa en feature-modul för bättre isolering av specifika funktioner",
+                priority = Priority.MEDIUM,
+                estimatedTime = Duration.ofDays(10),
+                status = Status.PLANNED
+            )
+        )
+    }
+}
+```
 
 ## 2. Mellansiktiga Mål (3-6 månader)
 
@@ -77,6 +121,22 @@ class FeaturePlanner @Inject constructor() {
                 description = "Implementera full offline-funktionalitet",
                 complexity = Complexity.MEDIUM,
                 dependencies = listOf("DB-004"),
+                status = Status.PLANNED
+            ),
+            Feature(
+                id = "FEAT-003",
+                name = "Usecase-lager",
+                description = "Implementera usecase-lager i domain-modulen för bättre hantering av affärslogik",
+                complexity = Complexity.MEDIUM,
+                dependencies = listOf("MOD-001"),
+                status = Status.PLANNED
+            ),
+            Feature(
+                id = "FEAT-004",
+                name = "Mapper-lager",
+                description = "Implementera mapper-lager för bättre hantering av konvertering mellan modeller",
+                complexity = Complexity.MEDIUM,
+                dependencies = listOf("MOD-001"),
                 status = Status.PLANNED
             )
         )

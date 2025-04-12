@@ -12,17 +12,19 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.bps.plantseeds5.ui.plants.PlantsScreen
-import com.bps.plantseeds5.ui.plants.PlantsViewModel
-import com.bps.plantseeds5.ui.seeds.AddSeedScreen
-import com.bps.plantseeds5.ui.seeds.SeedsScreen
-import com.bps.plantseeds5.ui.seeds.SeedsViewModel
-import com.bps.plantseeds5.ui.theme.PlantSeeds5Theme
+import com.bps.plantseeds5.modules.ui.navigation.Screen
+import com.bps.plantseeds5.modules.ui.plants.PlantsScreen
+import com.bps.plantseeds5.modules.ui.plants.PlantsViewModel
+import com.bps.plantseeds5.modules.ui.seeds.AddSeedScreen
+import com.bps.plantseeds5.modules.ui.seeds.SeedsScreen
+import com.bps.plantseeds5.modules.ui.seeds.SeedsViewModel
+import com.bps.plantseeds5.modules.ui.theme.PlantSeeds5Theme
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -46,6 +48,7 @@ fun MainScreen() {
     val navController = rememberNavController()
     val plantsViewModel: PlantsViewModel = hiltViewModel()
     var selectedItem by remember { mutableStateOf(0) }
+    val plants by plantsViewModel.plants.collectAsStateWithLifecycle(initialValue = emptyList())
 
     Scaffold(
         bottomBar = {
@@ -56,7 +59,7 @@ fun MainScreen() {
                     selected = selectedItem == 0,
                     onClick = {
                         selectedItem = 0
-                        navController.navigate("seeds") {
+                        navController.navigate(Screen.Seeds.route) {
                             popUpTo(navController.graph.startDestinationId)
                             launchSingleTop = true
                         }
@@ -68,7 +71,7 @@ fun MainScreen() {
                     selected = selectedItem == 1,
                     onClick = {
                         selectedItem = 1
-                        navController.navigate("add_seed") {
+                        navController.navigate(Screen.AddSeed.route) {
                             popUpTo(navController.graph.startDestinationId)
                             launchSingleTop = true
                         }
@@ -80,7 +83,7 @@ fun MainScreen() {
                     selected = selectedItem == 2,
                     onClick = {
                         selectedItem = 2
-                        navController.navigate("settings") {
+                        navController.navigate(Screen.Settings.route) {
                             popUpTo(navController.graph.startDestinationId)
                             launchSingleTop = true
                         }
@@ -91,27 +94,27 @@ fun MainScreen() {
     ) { paddingValues ->
         NavHost(
             navController = navController,
-            startDestination = "seeds",
+            startDestination = Screen.Seeds.route,
             modifier = Modifier.padding(paddingValues)
         ) {
-            composable("seeds") {
+            composable(Screen.Seeds.route) {
                 SeedsScreen(
                     onSeedClick = { /* TODO */ },
-                    onAddSeed = { navController.navigate("add_seed") }
+                    onAddSeed = { navController.navigate(Screen.AddSeed.route) }
                 )
             }
-            composable("add_seed") {
+            composable(Screen.AddSeed.route) {
                 AddSeedScreen(
                     onNavigateBack = { navController.popBackStack() }
                 )
             }
-            composable("plants") {
+            composable(Screen.Plants.route) {
                 PlantsScreen(
-                    plants = plantsViewModel.plants,
-                    plantDao = plantsViewModel.plantDao
+                    plants = plants,
+                    onAddPlant = { /* TODO */ }
                 )
             }
-            composable("settings") {
+            composable(Screen.Settings.route) {
                 // TODO: Implement settings screen
                 Text("Settings")
             }

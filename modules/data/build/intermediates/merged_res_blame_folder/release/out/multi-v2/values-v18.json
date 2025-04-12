@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.bps.plantseeds5.modules.data-merged_res-34:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Metal\\.gradle\\caches\\8.11.1\\transforms\\cc67be642828c9ad0f37d98da3e0c681\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.bps.plantseeds5.modules.data-mergeReleaseResources-32:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Metal\\.gradle\\caches\\8.11.1\\transforms\\cc67be642828c9ad0f37d98da3e0c681\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

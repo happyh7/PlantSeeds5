@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/drawable-anydpi-v21/ic_call_decline_low.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/drawable-anydpi-v21/ic_call_decline_low.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/drawable-anydpi-v21/ic_call_answer_video_low.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/drawable-anydpi-v21/ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/drawable-anydpi-v21/ic_call_answer_video.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/drawable-anydpi-v21/ic_call_answer_video.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/drawable-anydpi-v21/ic_call_decline.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/drawable-anydpi-v21/ic_call_decline.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/drawable-anydpi-v21/ic_call_answer_low.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/drawable-anydpi-v21/ic_call_answer_low.xml"
+    },
+    {
+        "merged": "com.bps.plantseeds5.modules.domain-merged_res-13:/drawable-anydpi-v21/ic_call_answer.xml",
+        "source": "com.bps.plantseeds5.modules.domain-core-1.12.0-2:/drawable-anydpi-v21/ic_call_answer.xml"
+    }
+]
